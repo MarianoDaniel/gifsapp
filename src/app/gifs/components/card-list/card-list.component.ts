@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { Gif } from '../../interfaces/gifs.interfaces';
 
 @Component({
   selector: 'gifs-card-list',
@@ -7,4 +8,8 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrl: './card-list.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CardListComponent { }
+export class CardListComponent {
+
+  @Input()
+  public gifs: Gif[] = [];
+}
